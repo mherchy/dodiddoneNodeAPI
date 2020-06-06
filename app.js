@@ -2,11 +2,15 @@ var express = require('express');
 var app = express();
 
 app.get('/login', function (req, res) {
-    res.end( JSON.stringify({token:"0123456789"}) );
+    console.log("LOGIN request");
+    console.log(req.body);
+    res.json({token:"0123456789"});
 });
 
 app.post('/sync', function (req, res) {
-    res.end( JSON.stringify({feedback:"ok"}) );
+    console.log("SYNC request");
+    console.log(req.body);
+    res.json({feedback:"ok"});
 });
 
 var server = app.listen(8008, function () {
